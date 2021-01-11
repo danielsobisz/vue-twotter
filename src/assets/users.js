@@ -1,0 +1,60 @@
+export const users = [
+  {
+    id: 1,
+    username: '@MitchellRomney',
+    firstName: 'Mitchell',
+    lastName: 'Romney',
+    email: 'mitchellromney@theearthissquare.com',
+    pic: 'user.jpg',
+    followers: 350,
+    isAdmin: true,
+    twoots: [
+      { id: 1, content: 'Twotter is Amazing!' },
+      { id: 2, content: "Don't forget to subscriber to The Earth is Square!" },
+    ],
+  },
+  {
+    id: 2,
+    username: '@JColeNC',
+    firstName: 'J.',
+    lastName: 'Cole',
+    pic: 'user2.jpg',
+    followers: 213,
+    email: null,
+    isAdmin: false,
+    twoots: [
+      { id: 1, content: 'Has anybody heard about Nuxt?' },
+      { id: 2, content: 'Hello World!' },
+    ],
+  },
+  {
+    id: 3,
+    username: '@MaryJane',
+    firstName: 'Mary',
+    lastName: 'Jane',
+    pic: 'user3.jpg',
+    followers: 420,
+    email: null,
+    isAdmin: false,
+    twoots: [
+      { id: 1, content: 'Whats up Everybody!' },
+      { id: 2, content: 'Twotter is way much better than Twitter!' },
+    ],
+  },
+  {
+    id: 4,
+    username: '@BobBurnham',
+    firstName: 'Bob',
+    lastName: 'Burnham',
+    pic: 'user4.jpg',
+    followers: 87,
+    email: null,
+    isAdmin: false,
+    twoots: [
+      {
+        id: 1,
+        content: 'Suddenly, I notice that Vue is way much better than React.',
+      },
+    ],
+  },
+];
