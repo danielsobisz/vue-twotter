@@ -31,6 +31,10 @@ export default {
   padding: 10px;
   display: flex;
   justify-content: space-between;
+  @media (max-width: $mobile) {
+    display: block;
+    text-align: center;
+  }
   &__logo {
     font-size: 36px;
     color: #34b3ea;

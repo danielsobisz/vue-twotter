@@ -49,16 +49,21 @@ export default {
   &__users-list {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 
     width: 80%;
 
     margin: 100px auto;
-
+    @media (max-width: $laptop) {
+      width: 95%;
+    }
+    @media (max-width: $tablet-m) {
+      justify-content: space-around;
+    }
     .users-list__user {
       display: flex;
       flex-direction: column;
       justify-content: space-around;
-
       height: 450px;
       width: 300px;
 
@@ -69,6 +74,12 @@ export default {
       text-align: center;
 
       background-color: #e7e7e8;
+      @media (max-width: $laptop-s) {
+        width: 280px;
+      }
+      @media (max-width: $tablet) {
+        margin: 10px 0;
+      }
       &:hover {
         transform: scale(1.1, 1.1);
       }

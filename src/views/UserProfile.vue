@@ -67,7 +67,18 @@ export default {
 
   margin: 0 auto;
   padding: 50px 5%;
-
+  @media (max-width: $laptop) {
+    width: 70%;
+  }
+  @media (max-width: $tablet-m) {
+    width: 90%;
+    display: block;
+  }
+  &__username {
+    @media (max-width: $mobile) {
+      font-size: 24px;
+    }
+  }
   &__user-panel {
     display: flex;
     flex-direction: column;
@@ -82,6 +93,9 @@ export default {
 
     border-radius: 5px;
     border: 1px solid #dfe3e8;
+    @media (max-width: $tablet-m) {
+      margin: 20px 0;
+    }
   }
   &__admin-badge {
     margin: 5px auto 5px 0;
@@ -99,6 +113,9 @@ export default {
   }
   &__twoots-wrapper {
     grid-area: twootswrapper;
+    @media (max-width: $tablet-m) {
+      margin: 20px 0;
+    }
   }
 }
 </style>

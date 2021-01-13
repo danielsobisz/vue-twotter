@@ -87,6 +87,9 @@ export default {
     cursor: pointer;
     transition: 0.5s;
 
+    @media (max-width: $mobile) {
+      width: 50%;
+    }
     &:hover {
       background-color: white;
       color: rgb(45, 168, 224);
