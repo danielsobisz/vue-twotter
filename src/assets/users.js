@@ -9,8 +9,12 @@ export const users = [
     followers: 350,
     isAdmin: true,
     twoots: [
-      { id: 1, content: 'Twotter is Amazing!' },
-      { id: 2, content: "Don't forget to subscriber to The Earth is Square!" },
+      { id: 1, content: 'Twotter is Amazing!', date: '04.01.2021, 16:26:10' },
+      {
+        id: 2,
+        content: "Don't forget to subscriber to The Earth is Square!",
+        date: '02.01.2021, 13:23:15',
+      },
     ],
   },
   {
@@ -23,8 +27,12 @@ export const users = [
     email: null,
     isAdmin: false,
     twoots: [
-      { id: 1, content: 'Has anybody heard about Nuxt?' },
-      { id: 2, content: 'Hello World!' },
+      {
+        id: 1,
+        content: 'Has anybody heard about Nuxt?',
+        date: '02.01.2021, 08:34:23',
+      },
+      { id: 2, content: 'Hello World!', date: '23.12.2020, 13:12:50' },
     ],
   },
   {
@@ -37,8 +45,12 @@ export const users = [
     email: null,
     isAdmin: false,
     twoots: [
-      { id: 1, content: 'Whats up Everybody!' },
-      { id: 2, content: 'Twotter is way much better than Twitter!' },
+      { id: 1, content: 'Whats up Everybody!', date: '03.01.2021, 21:15:01' },
+      {
+        id: 2,
+        content: 'Twotter is way much better than Twitter!',
+        date: '30.12.2020, 18:49:32',
+      },
     ],
   },
   {
@@ -54,6 +66,7 @@ export const users = [
       {
         id: 1,
         content: 'Suddenly, I notice that Vue is way much better than React.',
+        date: '10.01.2021, 07:05:50',
       },
     ],
   },

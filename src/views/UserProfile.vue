@@ -1,22 +1,36 @@
 <template>
   <div class="user-profile">
-    <div class="user-profile__user-panel">
-      <h1 class="user-profile__username">{{ state.user.username }}</h1>
-      <div class="user-profile__admin-badge" v-if="state.user.isAdmin">
-        <p>Admin</p>
+    <!-- <div
+      class="user-profile__background"
+      :style="
+        require({
+          background: `url('@/assets/images/${state.user.background})`,
+        })
+      "
+    ></div> -->
+    <div class="user-profile__content">
+      <div class="user-profile__user-panel">
+        <h1 class="user-profile__username">{{ state.user.username }}</h1>
+        <div class="user-profile__admin-badge" v-if="state.user.isAdmin">
+          <p>Admin</p>
+        </div>
+        <div class="user-profile__follower-count">
+          <p>Followers: {{ state.user.followers }}</p>
+        </div>
       </div>
-      <div class="user-profile__follower-count">
-        <p>Followers: {{ state.user.followers }}</p>
+      <CreateTwootPanel @add-twoot="addTwoot" />
+      <div class="user-profile__twoots-wrapper">
+        <TwootItem
+          v-for="twoot in state.user.twoots"
+          :key="twoot.id"
+          :username="state.user.username"
+          :firstName="state.user.firstName"
+          :lastName="state.user.lastName"
+          :pic="state.user.pic"
+          :twoot="twoot"
+          :date="state.date"
+        />
       </div>
-    </div>
-    <CreateTwootPanel @add-twoot="addTwoot" />
-    <div class="user-profile__twoots-wrapper">
-      <TwootItem
-        v-for="twoot in state.user.twoots"
-        :key="twoot.id"
-        :username="state.user.username"
-        :twoot="twoot"
-      />
     </div>
   </div>
 </template>
@@ -39,9 +53,11 @@ export default {
       user: users[userId.value - 1] || users[1],
     });
     function addTwoot(twoot) {
+      let currentDate = new Date().toLocaleString();
       state.user.twoots.unshift({
         id: state.user.twoots.length + 1,
         content: twoot,
+        date: currentDate,
       });
     }
     return {
@@ -55,24 +71,32 @@ export default {
 
 <style lang="scss" scoped>
 .user-profile {
-  display: grid;
-  grid-template-columns: 1fr 3fr;
-  grid-template-rows: auto;
-  grid-template-areas:
-    'userpanel createtwoot createtwoot'
-    'userpanel twootswrapper twootswrapper';
-  grid-gap: 10px;
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      'userpanel createtwoot createtwoot'
+      'userpanel twootswrapper twootswrapper';
+    grid-gap: 10px;
 
-  width: 50%;
+    width: 50%;
 
-  margin: 0 auto;
-  padding: 50px 5%;
-  @media (max-width: $laptop) {
-    width: 70%;
+    margin: 0 auto;
+    padding: 50px 5%;
+    @media (max-width: $laptop) {
+      width: 70%;
+    }
+    @media (max-width: $tablet-m) {
+      width: 90%;
+      display: block;
+    }
   }
-  @media (max-width: $tablet-m) {
-    width: 90%;
-    display: block;
+  &__background {
+    height: 500px;
+
+    background-position: 50%;
+    filter: brightness(50%);
   }
   &__username {
     @media (max-width: $mobile) {

@@ -16,7 +16,6 @@
       placeholder="What's crackin?"
       class="user-profile__textarea"
     />
-
     <button v-if="newTwootCharacterCount < 181" class="user-profile__button">
       Twoot!
     </button>
@@ -31,6 +30,7 @@ export default {
   setup(props, ctx) {
     const state = reactive({
       newTwootContent: '',
+      date: '',
     });
 
     const newTwootCharacterCount = computed(() => state.newTwootContent.length);
